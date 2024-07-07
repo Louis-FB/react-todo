@@ -1,18 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export default function Form() {
-  //   const [noteData, setNoteData] = useState();
-  //const ID = 0;
-  const [todos, setTodos] = useState([]);
+export default function Form({ todos, setTodos }) {
   const [todoData, setTodoData] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     let newTodo = {
-      id: 1,
+      id: todos.length + 1, // temporary
       data: todoData,
+      completed: false,
     };
 
     setTodoData("");

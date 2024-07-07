@@ -45,3 +45,7 @@ main {
   font-weight: bold;
   cursor: pointer;
 }
+
+.completed {
+  text-decoration: line-through;
+}
