@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import Form from "./Form";
 import Todos from "./Todos";
 import Header from "./Header";
 
 function App() {
   const [todos, setTodos] = useState([]);
-
-  const [showForm, setShowForm] = useState(true);
 
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
@@ -16,7 +13,7 @@ function App() {
   const setCompleted = (id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: true } : todo
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
@@ -33,8 +30,7 @@ function App() {
           <Header
             todos={todos}
             setTodos={setTodos}
-            showForm={showForm}
-            setShowForm={setShowForm}
+            onClearCompleted={clearCompleted}
           />
           <Todos
             todos={todos}
