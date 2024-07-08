@@ -1,14 +1,16 @@
 import React from "react";
+import Todo from "./Todo";
 
 export default function Todos({ todos, onDelete, onComplete }) {
   return (
     <div className="todos-list">
       {todos.map((todo) => (
-        <div key={todo.id}>
-          <p className={todo.completed ? "completed" : ""}>{todo.data}</p>
-          <button onClick={() => onComplete(todo.id)}>Complete</button>
-          <button onClick={() => onDelete(todo.id)}>Delete</button>
-        </div>
+        <Todo
+          key={todo.id}
+          onComplete={onComplete}
+          onDelete={onDelete}
+          todo={todo}
+        />
       ))}
     </div>
   );
