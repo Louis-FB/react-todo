@@ -7,10 +7,18 @@ export default function Header({ todos, setTodos, onClearCompleted }) {
 
   return (
     <div className="np-header">
-      <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? "Hide" : "Show"} form
-      </button>
-      <button onClick={() => onClearCompleted()}>Clear completed</button>
+      <div className="header-btn-container">
+        <div className="header-btn-col">
+          <button onClick={() => setShowForm(!showForm)} className="header-btn">
+            {showForm ? "Hide" : "Show"} form
+          </button>
+        </div>
+        <div className="header-btn-col">
+          <button onClick={() => onClearCompleted()} className="header-btn">
+            Clear completed
+          </button>
+        </div>
+      </div>
       {showForm ? <Form todos={todos} setTodos={setTodos} /> : ""}
     </div>
   );

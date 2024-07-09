@@ -3,53 +3,47 @@ import { useState, useEffect } from "react";
 
 export default function Form({ todos, setTodos }) {
   const [todoData, setTodoData] = useState("");
+  const [disabledBtn, setDisabledBtn] = useState(true);
 
   const checkUniqueNumber = (newID) => {
-    // condition for generating id
-    console.log(newID);
-    console.log(todos);
     if (todos.length === 0) return true;
 
-    let unique = true;
-
-    todos.forEach((todo) => {
-      // should be for loop
-      //console.log(`Todo.id: ${todo.id} newID: ${newID}`);
-      if (todo.id === newID) {
-        console.log("Matched should return false");
-        unique = false;
-        return;
-        //return false; // not leaving the function ??
+    for (let i = 0; i < todos.length; ++i) {
+      if (todos[i].id == newID) {
+        return false;
       }
-    });
-    //console.log("Returning true...");
+    }
 
-    return unique;
-    //return true;
+    return true;
   };
 
   const generateID = () => {
     let newID = Math.floor(Math.random() * 100000);
-    ///let newID = 1;
 
-    if (checkUniqueNumber(newID) == false) {
-      // not working
-      console.log("Not unique");
+    if (checkUniqueNumber(newID) === false) {
       generateID();
-    } else {
-      console.log("Unique");
     }
 
     return newID;
   };
 
+  useEffect(() => {
+    if (todoData.length > 0) {
+      setDisabledBtn(false);
+    } else {
+      setDisabledBtn(true);
+    }
+  }, [todoData]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (todoData.length <= 0) return;
 
     let newID = generateID();
 
     let newTodo = {
-      id: newID, // temporary
+      id: newID,
       data: todoData,
       completed: false,
     };
@@ -59,20 +53,21 @@ export default function Form({ todos, setTodos }) {
     setTodos([...todos, newTodo]);
   };
 
-  //   useState(() => {
-  //     console.log(noteData);
-  //   }, noteData);
-
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Text"
-        value={todoData}
-        onChange={(e) => setTodoData(e.currentTarget.value)}
-      />
-      <button>Submit</button>
-      {/* {noteData} */}
+      <div className="form-col">
+        <input
+          type="text"
+          placeholder="new note here..."
+          value={todoData}
+          onChange={(e) => setTodoData(e.currentTarget.value)}
+        />
+      </div>
+      <div className="form-col">
+        <button disabled={disabledBtn} className="symbol-btn">
+          &#x2714;
+        </button>
+      </div>
     </form>
   );
 }

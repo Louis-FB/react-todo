@@ -1,5 +1,7 @@
 #root {
   margin: 0 auto;
+  --mainPadding: 10px;
+  --pageColour: #f5f5f5;
 
   /* padding: 2rem; */
 }
@@ -7,16 +9,124 @@
 .np-container {
   display: flex;
   flex-direction: column;
+  width: 400px;
+  position: relative;
 }
 .np-body {
   background-color: #91684b;
-  padding: 4px;
+  padding: 6px;
+  display: flex;
+  border-radius: 3px;
+  flex-direction: column;
   .np-body-page {
-    background-color: white;
+    /* background-color: white; */
+    background: var(--pageColour);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 .notepad {
-  background-color: #f5f5f5;
+  background-color: var(--pageColour);
+}
+
+.np-binder-mask {
+  height: 60px;
+  position: absolute;
+  /* top: 60px; */
+  /* background-color: rgba(0, 0, 255, 0.5); */
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.binder-col {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.binder-hole-cont {
+  background: var(--pageColour);
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  height: 30px;
+  width: 30px;
+  border-radius: 90px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  align-items: end;
+}
+
+.binder-hole-inner-1 {
+  background-color: #644833;
+  border-radius: 90px;
+  height: 26px;
+  width: 26px;
+  content: "";
+  /* padding: 2px; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.binder-hole-inner-2 {
+  background: #efeabd;
+  width: 22px;
+  /* display: none; */
+  height: 22px;
+  border-radius: 90px;
+}
+
+.np-binder {
+  height: 60px;
+}
+
+.np-header {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #c4c4c4;
+}
+
+.header-btn-container {
+  display: flex;
+  flex-direction: row;
+  padding: var(--mainPadding);
+}
+.header-btn-col {
+  flex: 1;
+  display: flex;
+}
+
+.header-btn-col:nth-child(1) {
+  .header-btn {
+    color: blue;
+  }
+}
+
+.header-btn-col:nth-child(2) {
+  justify-content: flex-end;
+  .header-btn {
+    color: red;
+  }
+}
+
+.header-btn {
+  font-family: "Kalam";
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  text-decoration: underline;
 }
 
 .completed {
@@ -25,10 +135,63 @@
 
 .todo {
   border-top: 1px solid #c4c4c4;
-  padding: 10px;
+  /* padding: 10px; */
   display: flex;
   flex-direction: row;
+  font-size: 1.2rem;
   p {
     margin: 0px;
+  }
+}
+
+.todo-data {
+  display: flex;
+  flex: 1;
+  padding: var(--mainPadding);
+  /* background-color: red; */
+}
+
+.todo-btn-cont {
+  display: flex;
+}
+
+.symbol-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: var(--mainPadding);
+  /* font-weight: 700; */
+}
+
+form {
+  border-top: 1px solid #c4c4c4;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: row;
+  /* padding: var(--mainPadding); */
+}
+.form-col {
+  display: flex;
+}
+.form-col:nth-child(1) {
+  flex: 1;
+  input {
+    width: 100%;
+    padding: var(--mainPadding);
+    border: none;
+    font-family: "Kalam";
+    font-size: 1.2rem;
+    background: none;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+.form-col:nth-child(2) {
+  /* background-color: blue; */
+  .symbol-btn {
+    padding: var(--mainPadding);
+    /* background: red; */
   }
 }
