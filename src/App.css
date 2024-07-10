@@ -13,31 +13,30 @@
   position: relative;
 }
 .np-body {
-  background-color: #91684b;
-  padding: 6px;
   display: flex;
-  border-radius: 3px;
   flex-direction: column;
   .np-body-page {
     /* background-color: white; */
     background: var(--pageColour);
     border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 }
 .notepad {
   background-color: var(--pageColour);
 }
 
-.np-binder-mask {
+/* .np-binder-mask {
   height: 60px;
-  position: absolute;
-  /* top: 60px; */
-  /* background-color: rgba(0, 0, 255, 0.5); */
-  display: flex;
+  position: absolute; */
+/* top: 60px; */
+/* background-color: rgba(0, 0, 255, 0.5); */
+/* display: flex;
   width: 100%;
   flex-direction: row;
-}
+} */
 
 .binder-col {
   display: flex;
@@ -51,11 +50,11 @@
   background: var(--pageColour);
   background: radial-gradient(
     ellipse at bottom,
-    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 0.7) 0%,
     rgba(255, 255, 255, 1) 100%
   );
-  height: 30px;
-  width: 30px;
+  height: 18px;
+  width: 18px;
   border-radius: 90px;
   display: flex;
   /* align-items: center; */
@@ -63,35 +62,26 @@
   align-items: end;
 }
 
-.binder-hole-inner-1 {
-  background-color: #644833;
-  border-radius: 90px;
-  height: 26px;
-  width: 26px;
-  content: "";
-  /* padding: 2px; */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-}
-
 .binder-hole-inner-2 {
   background: #efeabd;
-  width: 22px;
-  /* display: none; */
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border-radius: 90px;
+  box-shadow: inset rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .np-binder {
   height: 60px;
+  width: 100%;
+  flex-direction: row;
+  display: flex;
 }
 
 .np-header {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #c4c4c4;
+  /* border-top: 1px solid #c4c4c4; */
 }
 
 .header-btn-container {

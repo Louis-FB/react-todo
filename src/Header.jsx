@@ -10,12 +10,12 @@ export default function Header({ todos, setTodos, onClearCompleted }) {
       <div className="header-btn-container">
         <div className="header-btn-col">
           <button onClick={() => setShowForm(!showForm)} className="header-btn">
-            {showForm ? "Hide" : "Show"} form
+            {showForm ? "hide" : "show"} form
           </button>
         </div>
         <div className="header-btn-col">
           <button onClick={() => onClearCompleted()} className="header-btn">
-            Clear completed
+            clear completed
           </button>
         </div>
       </div>

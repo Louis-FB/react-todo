@@ -24,53 +24,45 @@ function App() {
 
   return (
     <div className="np-container">
-      <div className="np-binder-mask">
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-        <div className="binder-col">
-          <div className="binder-hole-cont">
-            <div className="binder-hole-inner-1">
-              <div className="binder-hole-inner-2"></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="np-body">
         <div className="np-body-page">
-          <div className="np-binder"></div>
+          <div className="np-binder">
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+            <div className="binder-col">
+              <div className="binder-hole-cont">
+                <div className="binder-hole-inner-2"></div>
+              </div>
+            </div>
+          </div>
           <Header
             todos={todos}
             setTodos={setTodos}
